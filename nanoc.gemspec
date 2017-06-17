@@ -13,6 +13,9 @@ Gem::Specification.new do |s|
   s.email   = 'denis@stoneship.org'
   s.license = 'MIT'
 
+  s.cert_chain  = ['certs/denis.pem']
+  s.signing_key = File.expand_path('~/.ssh/gem-private_key.pem') if $PROGRAM_NAME =~ /\bgem\z/
+
   s.files              = `git ls-files -z`.split("\x0")
   s.executables        = ['nanoc']
   s.require_paths      = ['lib']
